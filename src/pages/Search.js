@@ -56,14 +56,14 @@ const Search = () => {
             {search != null ? (
                 search.map((drink) => {
                     return (
-                        <Col className="sm-2 md-4 lg-6 mb-5" key={drink.idDrink}>
+                        <Col xs={6} s={6} md={4} lg={3} key={drink.idDrink}>
                             <Card name={drink.strDrink} src={drink.strDrinkThumb} alt={drink.strDrink + ' photo'} icon={<FontAwesomeIcon icon={faCartShopping} className="pe-1"></FontAwesomeIcon>} btnText={price + '$'} onClick={() => handleClick(drink.idDrink, drink.strDrink, price)}>
                             </Card>
                         </Col>
                     )
                 })
             ) : (
-                <Col className="sm-2 md-4 lg-6 my-5">
+                <Col className="my-5">
                     <Image fluid src={logo} alt="brand logo" className="w-50" />
                 </Col>
             )}

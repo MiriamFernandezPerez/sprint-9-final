@@ -80,7 +80,7 @@ const Selection = () => {
             {popular != null ? (
                 popular.map((drink) => {
                     return (
-                        <Col className="sm-2 md-4 lg-6 mb-" key={drink[0].idDrink}>
+                        <Col xs={6} s={6} md={4} lg={3} key={drink[0].idDrink}>
                             <Card name={drink[0].strDrink} src={drink[0].strDrinkThumb} alt={drink[0].strDrink + ' photo'} icon={<FontAwesomeIcon icon={faCartShopping} className="pe-3"></FontAwesomeIcon>} btnText={price + '$'} onClick={() => handleClick(drink[0].idDrink, drink[0].strDrink, price)}>
                             </Card>
                         </Col>
@@ -97,7 +97,7 @@ const Selection = () => {
             {sweet != null ? (
                 sweet.map((drink) => {
                     return (
-                        <Col className="sm-2 md-4 lg-6 mb-" key={drink[0].idDrink}>
+                        <Col xs={6} s={6} md={4} lg={3} key={drink[0].idDrink}>
                             <Card name={drink[0].strDrink} src={drink[0].strDrinkThumb} alt={drink[0].strDrink + ' photo'} icon={<FontAwesomeIcon icon={faCartShopping} className="pe-3"></FontAwesomeIcon>} btnText={price + '$'} onClick={() => handleClick(drink[0].idDrink, drink[0].strDrink, price)}>
                             </Card>
                         </Col>
@@ -114,7 +114,7 @@ const Selection = () => {
             {brave != null ? (
                 brave.map((drink) => {
                     return (
-                        <Col className="sm-2 md-4 lg-6" key={drink[0].idDrink}>
+                        <Col xs={6} s={6} md={4} lg={3} key={drink[0].idDrink}>
                             <Card name={drink[0].strDrink} src={drink[0].strDrinkThumb} alt={drink[0].strDrink + ' photo'} icon={<FontAwesomeIcon icon={faCartShopping} className="pe-3"></FontAwesomeIcon>} btnText={price + '$'} onClick={() => handleClick(drink[0].idDrink, drink[0].strDrink, price)}>
                             </Card>
                         </Col>

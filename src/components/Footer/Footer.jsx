@@ -9,17 +9,17 @@ const Footer = () => {
     <FooterStyle>
         <Container fluid>
             <Row className='align-items-center'>
-                <Col sm={2} className='fs-2'>
-                    <a href="https://www.facebook.com/"><FontAwesomeIcon icon={faFacebook} className='px-3'/></a>
-                    <a href="https://www.instagram.com/"><FontAwesomeIcon icon={faInstagram} className='px-3'/></a>
-                    <a href="https://www.tiktok.com/"><FontAwesomeIcon icon={faTiktok} className='px-3'/></a>
+                <Col md={3} className='d-flex justify-content-around'>
+                    <a href="https://www.facebook.com/"><FontAwesomeIcon icon={faFacebook} size="lg" /></a>
+                    <a href="https://www.instagram.com/"><FontAwesomeIcon icon={faInstagram} size="lg" /></a>
+                    <a href="https://www.tiktok.com/"><FontAwesomeIcon icon={faTiktok} size="lg" /></a>
                 </Col>
-                <Col sm={8}>
+                <Col md={6}>
                     <h5>Copyright©</h5>
                     <a href="https://www.google.com/search?q=Privacy+Policy"><h6>Privacy Policy</h6></a>
                 </Col>
-                <Col sm={2}>
-                    <h5>Coctail Experience ©</h5>
+                <Col md={3}>
+                    <h5>Cocktail Experience ©</h5>
                     <h6>61 Goodge St, London W1T 1TL, UK</h6>
                     <h6>+44 214 4157 5874</h6>
                 </Col>

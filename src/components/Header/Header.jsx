@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import { DataContext } from "../../useContext/DataContext";
 import HeaderStyle from "./Header.styles";
 import {Container, Row, Col, Image, Modal, Table, Form } from "react-bootstrap";
@@ -17,6 +17,11 @@ const Header = () => {
 
     //Creo un estado para manejar el Modal
     const [show, setShow] = useState(false);
+
+    //Creo estados para verificar que el cliente introduce nombre y numero de mesa y así habilitar botón de confirmación de comanda
+    let [inputName, setInputName] = useState('')
+    let [optionNum, setOptionNum] = useState(0)
+    let [activeButton, setActiveButton] = useState(true)
     
     //Creo una variable para calcular el total
     let total = 0;
@@ -57,11 +62,15 @@ const Header = () => {
         let name = event.target.value;
         setClient(name)
         localStorage.setItem("client", JSON.stringify(event.target.value))
+        //Seteo para verificar que han introducido un nombre
+        name !== '' ? (setInputName(name)) : (setInputName(''))
     }
 
     const handleOption = (event) => {
-        setTable(event.target.value)
-        localStorage.setItem("table", JSON.stringify(event.target.value))
+        let num = event.target.value 
+        setTable(num)
+        localStorage.setItem("table", JSON.stringify(num))
+        num !== '' ? (setOptionNum(num)) : (setOptionNum(0))
     }
 
     const handleOrder = () => {
@@ -86,15 +95,20 @@ const Header = () => {
 
         //Seteo a vacío el array order
         setOrder([])
-        
+
         //Cierro el modal
         setShow(false)
-        
     } 
 
     const handleRequest = () => {
         window.location.reload(true);
     }
+
+    const activateButton = () =>{
+        inputName !== '' && optionNum !== 0 ? (setActiveButton(false)) : (setActiveButton(true))
+    }
+
+    useEffect(()=>activateButton())
 
     return(
     <HeaderStyle>
@@ -193,12 +207,8 @@ const Header = () => {
                     })}
                     </Form.Select>
                 </Form.Group>
-                <Button text="Confirm Order" onClick={handleOrder} disabled>
-                    Save Changes
-                </Button>
-                <Button text='Close' onClick={handleClose}>
-                    Close
-                </Button>
+                <Button text="Confirm Order" onClick={handleOrder} disabled={activeButton}></Button>
+                <Button text='Close' onClick={handleClose}></Button>
                 </Modal.Footer>
             </Modal>
         </Container>

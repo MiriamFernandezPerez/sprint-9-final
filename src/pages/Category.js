@@ -7,6 +7,17 @@ import axios from "axios";
 import logo from "../img/logo.svg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import beer from '../img/beer.jpg'
+import cocktail from '../img/cocktail.jpg'
+import cocoa from '../img/cocoa.webp'
+import coffeetea from '../img/coffee-tea.jpg'
+import homemade from '../img/homemade-liquor.jpeg'
+import ordinary from '../img/ordinary-drinks.jpg'
+import other from '../img/other.jpg'
+import punch from '../img/punch-party.jpg'
+import shake from '../img/shake.webp'
+import shot from '../img/shot.jpg'
+import soft from '../img/soft-drink.jpg'
 
 const Category = () => {
 
@@ -19,6 +30,10 @@ const Category = () => {
 
     const [category, setCategory] = useState(null);
     const [selection, setSelection] = useState(null);
+
+    //Creo un array con las fotos de las bebidas
+    const pictures = [beer, cocktail, cocoa, coffeetea, homemade, ordinary, other, punch, shake, shot, soft]
+
 
     useEffect(() => {
         const categoryList = [];
@@ -53,23 +68,23 @@ const Category = () => {
             {
                 selection == null ? (
                     category != null ? (
-                        category[0].map((cat) => {
+                        category[0].map((cat, index) => {
                             return (
-                                <Col className="sm-2 md-4 lg-6 mb-5" key={cat.strCategory}>
-                                    <Card name={cat.strCategory} btnText='See' onClick={handleCat}>
+                                <Col xs={6} s={6} md={4} lg={3} key={cat.strCategory}>
+                                    <Card name={cat.strCategory} btnText='See' onClick={handleCat} src={pictures[index]} alt={cat.strCategoty + ' photo'}>
                                     </Card>
                                 </Col>
                             )
                         })
                     ) : (
-                        <Col className="sm-2 md-4 lg-6 my-5">
+                        <Col className="my-5">
                             <Image fluid src={logo} alt="brand logo" className="w-50" />
                         </Col>
                     )
                 ) : (
                     selection.map((cat) => {
                         return (
-                            <Col className="sm-2 md-4 lg-6" key={cat.idDrink}>
+                            <Col xs={6} s={6} md={4} lg={3} key={cat.idDrink}>
                                 <Card name={cat.strDrink} src={cat.strDrinkThumb} alt={cat.strDrink + ' photo'} icon={<FontAwesomeIcon icon={faCartShopping} className="pe-3"></FontAwesomeIcon>} btnText={price + '$'} onClick={() => handleClick(cat.idDrink, cat.strDrink, price)}>
                                 </Card>
                             </Col>

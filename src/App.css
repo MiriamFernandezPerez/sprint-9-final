@@ -10,6 +10,7 @@ body{
   padding: 0;
   border: 0;
   font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
 }
 
 h2{
@@ -33,4 +34,13 @@ h6{
  
 .mostrar {
     display: block;
+}
+
+.modal-body{
+  display: flex;
+  justify-content: center
+}
+
+.modal-footer{
+  padding: 2rem 3rem;
 }

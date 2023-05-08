@@ -1,9 +1,9 @@
 import React from 'react';
 import ButtonStyle from './Button.styles';
 
-const Button = ({onClick, icon, text, span}) => {
+const Button = ({onClick, icon, text, span, disabled}) => {
   return (
-    <ButtonStyle onClick={onClick}>{icon}{text} {span}</ButtonStyle>
+    <ButtonStyle onClick={onClick} disabled={disabled}>{icon}{text} {span}</ButtonStyle>
   )
 }
 

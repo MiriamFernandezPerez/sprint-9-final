@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+body{
+  min-height: 100vh;
+  position: relative;
+  background-color: #0a012d;
+  margin:0;
+  padding: 0;
+  border: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h2{
+  text-decoration: underline;
+}
+h6{
+  font-style: italic;
+}
+
+.container{
+  width: 100%;
+  padding-right: calc(var(1.5rem) * .5);
+  padding-left: calc(var(1.5rem) * .5);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.ocultar {
+    display: none;
+}
+ 
+.mostrar {
+    display: block;
+}

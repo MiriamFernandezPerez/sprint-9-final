@@ -42,7 +42,7 @@ const Header = () => {
     let upButton;
     if (path === '/' || path === '/login' || path === '/register'){
         upButton = 'private';
-    }else if (path === '/Tpv'){
+    }else if (path === '/tpv'){
         upButton = 'tpv'
     }
     else{
